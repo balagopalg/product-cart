@@ -12,7 +12,7 @@ export { productReviews }
  * @param {*} next
  * @return {*}  {Promise<any>}
  */
-const productReviews = async (req: express.Request, res: express.Response, next: NextFunction): Promise<any> => {
+const productReviews = async (req: express.Request, res: any, next: NextFunction): Promise<any> => {
   const { productId } = req.body
 
   if (isNaN(productId)) res.send({ status: false, message: 'Invalid Product Id' })

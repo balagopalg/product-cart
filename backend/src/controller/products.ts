@@ -12,7 +12,7 @@ export { productDetails }
  * @param {*} next
  * @return {*}  {Promise<any>}
  */
-const productDetails = async (req: express.Request, res: express.Response, next: NextFunction): Promise<any> => {
+const productDetails = async (req: express.Request, res: any, next: NextFunction): Promise<any> => {
   try {
     const query = `
       SELECT Distinct id, name, 

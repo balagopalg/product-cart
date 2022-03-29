@@ -13,7 +13,7 @@ export { addReview }
  * @param {*} next
  * @return {*}  {Promise<any>}
  */
-const addReview = async (req: express.Request, res: express.Response, next: NextFunction): Promise<any> => {
+const addReview = async (req: express.Request, res: any, next: NextFunction): Promise<any> => {
   // Input
   const { productId, rating } = req.body
   let { review } = req.body
@@ -52,7 +52,6 @@ const addReview = async (req: express.Request, res: express.Response, next: Next
     res.send({ status: true, message: 'successful' })
     return
   } catch (err) {
-    console.log('ERRRR', err)
     next(err)
   }
 }
